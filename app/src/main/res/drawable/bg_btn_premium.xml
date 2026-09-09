@@ -1,0 +1,22 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Golden Glow / Border -->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient 
+                android:angle="45" 
+                android:startColor="@color/premium_gold" 
+                android:endColor="@color/premium_gold_light" />
+            <corners android:radius="16dp" />
+        </shape>
+    </item>
+    <!-- Main Button Body (Blue Gradient) -->
+    <item android:top="2dp" android:left="2dp" android:right="2dp" android:bottom="2dp">
+        <shape android:shape="rectangle">
+            <gradient 
+                android:angle="135" 
+                android:startColor="@color/premium_blue" 
+                android:endColor="@color/premium_blue_light" />
+            <corners android:radius="14dp" />
+        </shape>
+    </item>
+</layer-list>

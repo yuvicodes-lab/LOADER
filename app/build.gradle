@@ -1,0 +1,151 @@
+plugins {
+    id 'com.android.application'
+    id 'org.lsposed.lsparanoid'
+}
+
+android {
+    namespace 'com.arcx'
+    compileSdk 34
+
+    signingConfigs {
+    debug {
+        storeFile file("keys/yuvi.jks")
+        storePassword "11111111"
+        keyPassword "11111111"
+        keyAlias "key0"
+    }
+
+    release {
+        storeFile file("keys/yuvi.jks")
+        storePassword "11111111"
+        keyPassword "11111111"
+        keyAlias "key0"
+    }
+}
+
+    lint {
+        abortOnError false
+        checkReleaseBuilds false
+        disable 'ExpiredTargetSdkVersion'
+    }
+
+    defaultConfig {
+        applicationId "com.arcx"
+
+        minSdk 24
+        targetSdk 28
+
+        versionCode 1
+        versionName "1.0"
+
+        multiDexEnabled true
+
+        // Only English resources
+        resConfigs "en"
+
+        vectorDrawables {
+            useSupportLibrary true
+        }
+
+        ndk {
+            abiFilters "arm64-v8a"
+        }
+
+        externalNativeBuild {
+            cmake {
+                cppFlags ''
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            signingConfig signingConfigs.release
+
+            // IMPORTANT: size reduction
+            minifyEnabled true
+            shrinkResources true
+
+            proguardFiles(
+                'proguard-rules.pro'
+            )
+
+            ndk {
+                debugSymbolLevel 'NONE'
+            }
+        }
+
+        debug {
+            signingConfig signingConfigs.release
+
+            // Debug build intentionally larger
+            minifyEnabled false
+            shrinkResources false
+        }
+    }
+
+    packagingOptions {
+        jniLibs {
+            useLegacyPackaging true
+        }
+
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/ASL2.0'
+        exclude 'META-INF/*.kotlin_module'
+        exclude 'DebugProbesKt.bin'
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    lsparanoid {
+        seed = 1919810
+        global = false
+        includeDependencies = false
+        variantFilter = { true }
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+
+    externalNativeBuild {
+        ndkBuild {
+            path file('src/main/jni/Android.mk')
+        }
+    }
+
+    ndkVersion "24.0.8215888"
+}
+
+dependencies {
+    implementation fileTree(
+        dir: "libs",
+        includes: ["*.aar", "*.jar"]
+    )
+
+   // implementation project(":Core")
+
+    implementation 'com.github.tiann:FreeReflection:3.2.2'
+
+ //   implementation 'com.github.CodingGay.BlackReflection:core:1.1.4'
+ //   annotationProcessor 'com.github.CodingGay.BlackReflection:compiler:1.1.4'
+
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'androidx.multidex:multidex:2.0.1'
+
+    implementation 'com.google.android.material:material:1.11.0'
+
+//    implementation 'com.airbnb.android:lottie:6.0.0'
+
+    coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:2.0.4'
+}

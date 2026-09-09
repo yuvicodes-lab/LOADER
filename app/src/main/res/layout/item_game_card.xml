@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@drawable/bg_glass_card"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <!-- Real Game Icon -->
+    <ImageView
+        android:id="@+id/cardGameIcon"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:contentDescription="Game Icon"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_game_premium" />
+
+    <TextView
+        android:id="@+id/cardGameTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:gravity="center"
+        android:text="GAME TITLE"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/cardGamePkg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:gravity="center"
+        android:text="com.package.name"
+        android:textColor="#8A99AD"
+        android:textSize="12sp"
+        android:fontFamily="sans-serif-monospace" />
+
+    <Button
+        android:id="@+id/cardActionButton"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/bg_clay_button"
+        android:backgroundTint="@null"
+        android:text="LAUNCH GAME"
+        android:textColor="#FFFFFF"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:letterSpacing="0.05" />
+</LinearLayout>

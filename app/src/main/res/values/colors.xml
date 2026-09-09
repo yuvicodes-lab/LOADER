@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Legacy Colors (Required by other activities) -->
+    <color name="arcx_blue">#0F2C59</color>
+    <color name="arcx_red">#D32F2F</color>
+    <color name="arcx_hint">#5A7A9C</color>
+    <color name="arcx_text">#0F2C59</color>
+
+    <!-- Premium Neumorphic Palette -->
+    <color name="neumorphic_base">#E6EEF8</color>
+    <color name="neumorphic_light">#FFFFFF</color>
+    <color name="neumorphic_dark">#C3D4E8</color>
+    <color name="neumorphic_inner">#D5E2F0</color>
+
+    <!-- Premium Accents -->
+    <color name="premium_blue">#0F2C59</color>
+    <color name="premium_blue_light">#1E4D8C</color>
+    <color name="premium_gold">#D4AF37</color>
+    <color name="premium_gold_light">#F2C94C</color>
+
+    <!-- Text Colors -->
+    <color name="text_primary">#0F2C59</color>
+    <color name="text_secondary">#5A7A9C</color>
+</resources>

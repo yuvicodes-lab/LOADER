@@ -1,0 +1,26 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/neumorphic_base" />
+            <corners android:radius="16dp" />
+        </shape>
+    </item>
+    <item android:bottom="3dp" android:right="3dp">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/neumorphic_dark" />
+            <corners android:radius="16dp" />
+        </shape>
+    </item>
+    <item android:top="3dp" android:left="3dp">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/neumorphic_light" />
+            <corners android:radius="16dp" />
+        </shape>
+    </item>
+    <item android:top="2dp" android:left="2dp" android:right="2dp" android:bottom="2dp">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/neumorphic_inner" />
+            <corners android:radius="14dp" />
+        </shape>
+    </item>
+</layer-list>

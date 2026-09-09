@@ -1,0 +1,5 @@
+rootProject.name = "sumit"
+include ':app'
+//include ':Core'
+
+
